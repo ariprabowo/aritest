@@ -1,0 +1,54 @@
+CREATE DATABASE db_production;
+
+
+USE db_production;
+
+CREATE TABLE m_karyawan(
+	npk VARCHAR(5) NOT NULL PRIMARY KEY,
+    name VARCHAR(50),
+    alamat VARCHAR(255)
+);
+
+CREATE TABLE m_item(
+	kode_item VARCHAR(4) NOT NULL PRIMARY KEY,
+    name_item VARCHAR(50)
+);
+
+CREATE TABLE m_lokasi(
+	kode_lokasi VARCHAR(4) NOT NULL PRIMARY KEY,
+    name_lokasi VARCHAR(50)
+);
+
+CREATE TABLE m_achivement(
+	kode_achivement VARCHAR(4) NOT NULL PRIMARY KEY,
+    time_from time,
+    time_to time
+);
+
+CREATE TABLE m_planning(
+	kode_planning VARCHAR(4) NOT NULL PRIMARY KEY,
+    kode_item varchar(4),
+    qty_target INT,
+    waktu_target DECIMAL,
+    FOREIGN KEY (kode_item) REFERENCES m_item(kode_item)
+);
+
+CREATE TABLE t_produksi(
+	kode_produksi VARCHAR(5) NOT NULL PRIMARY KEY,
+    npk VARCHAR(5),
+    tgl_transaksi DATETIME,
+    kode_lokasi VARCHAR(4),
+    kode_planning VARCHAR(4),
+    qty_actual INT,    
+    FOREIGN KEY (npk) REFERENCES m_karyawan(npk),
+    FOREIGN KEY (kode_lokasi) REFERENCES m_lokasi(kode_lokasi),
+    FOREIGN KEY (kode_planning) REFERENCES m_planning(kode_planning)
+);
+
+CREATE TABLE tbl_login(
+    username VARCHAR(5) NOT NULL PRIMARY KEY,
+    password VARCHAR(MAX),
+    create_at DATETIME,
+    create_by VARCHAR(100),
+    FOREIGN KEY (npk) REFERENCES m_karyawan(npk)
+);
