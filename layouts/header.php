@@ -45,7 +45,7 @@ include 'config/auth.php';
             <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link text-white" aria-current="page" href="../ARITEST/index.php">
+                        <a class="nav-link text-white" aria-current="page" href="../index.php">
                         <span data-feather="home"></span>
                         Dashboard
                         </a>
@@ -56,11 +56,11 @@ include 'config/auth.php';
     </a>
                     </li>
                     <ul class="collapse" id="collapseExample">
-                        <li class="nav-item"><a class="text-white nav-link" href="../ARITEST/input.php"><span data-feather="edit"></span> Input</a></li>
-                        <li class="nav-item"><a class="text-white nav-link" href="../ARITEST/view.php"><span data-feather="menu"></span> View</a></li>
+                        <li class="nav-item"><a class="text-white nav-link" href="../input.php"><span data-feather="edit"></span> Input</a></li>
+                        <li class="nav-item"><a class="text-white nav-link" href="../view.php"><span data-feather="menu"></span> View</a></li>
                     </ul>
                     <li class="nav-item">
-                        <a class="nav-link text-white" aria-current="page" href="#">
+                        <a class="nav-link text-white" aria-current="page" href="../logout.php">
                         <span data-feather="log-out"></span>
                         Logout
                         </a>
